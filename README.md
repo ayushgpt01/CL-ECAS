@@ -59,5 +59,5 @@ Contributions to the Signcryption App are welcome! If you find any issues or hav
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE]() file for details.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
