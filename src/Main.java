@@ -21,7 +21,11 @@ public class Main {
             System.out.println("2. Perform Signcryption");
             System.out.println("3. Perform Unsigncryption");
             System.out.println("0. Exit");
+            if(scanner.hasNextInt()){
             option = scanner.nextInt();
+            } else {
+                option = 5;
+            }
 
             switch (option) {
                 case 1 -> createUser(scanner);
@@ -35,7 +39,8 @@ public class Main {
 
     private static void createUser(Scanner scanner) {
         System.out.print("Enter the user's identity: ");
-        String identity = scanner.next();
+        scanner.nextLine();
+        String identity = scanner.nextLine();
         User user = new User(kgc, identity);
         users.add(user);
         updatePublicKeys();
@@ -50,9 +55,9 @@ public class Main {
         }
 
         System.out.print("Enter the message to signcrypt: ");
-        String message = scanner.next();
+        String message = scanner.nextLine();
         System.out.println("Enter the user identity to send data to : ");
-        String userID = scanner.next();
+        String userID = scanner.nextLine();
         User user = findUserByIdentity(userID);
         if(user != null){
             user.setOrder(message.getBytes());
@@ -94,8 +99,9 @@ public class Main {
     }
 
     private static void updateCurrentUser(Scanner scanner) {
+        scanner.nextLine();
         System.out.println("Enter your identity : ");
-        String id = scanner.next();
+        String id = scanner.nextLine();
         currentUser = findUserByIdentity(id);
     }
 
